@@ -71,10 +71,7 @@ const subscribersSchema = new Schema(SUBSCRIBERS_SCHEMA_DEFINITION, {
 
 
 subscribersSchema.pre('save', async function() {
-  if (
-    this.transaction?.state === 'approved'
-  ) {
-    if (this.transaction.nativePurchase?.productId === this.product.subscriptionId) {
+    if (this.transaction?.receipt?.productId === this.product?.subscriptionId) {
       return true;
     }
     throw {
@@ -86,7 +83,6 @@ subscribersSchema.pre('save', async function() {
         },
       },
     };
-  }
 });
 
 subscribersSchema.path('transaction').validate(async function(transaction) {
@@ -165,7 +161,7 @@ subscribersSchema.path('transaction').validate(async function(transaction) {
     throw { code: 6778001, message: 'Subscription Id is not provided' };
   };
   if (!transaction) return true;
-  await verifyAndroidPurchase(transaction.nativePurchase);
+  await verifyAndroidPurchase(transaction.receipt);
   return true;
 }, 'transaction puchase token error');
 

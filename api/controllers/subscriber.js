@@ -152,19 +152,16 @@ function deleteSubscriber(req, res) {
 
 async function createTransaction(req, res) {
   const subscriberId = req.swagger.params.id.value;
-  const parseTransactionReceipt = (transaction) => {
-    const receipt = transaction?.nativePurchase?.receipt;
+  const parseTransactionReceipt = (purchase) => {
+    const receipt = purchase?.transaction?.receipt;
 
     if (receipt && typeof receipt === 'string') {
       return {
-        ...transaction,
-        nativePurchase: {
-          ...transaction.nativePurchase,
-          receipt: JSON.parse(receipt),
-        },
+          ...purchase.transaction,
+          receipt:JSON.parse(receipt)
       };
     }
-    return transaction;
+    return purchase.transaction;
   };
 
   const transaction = parseTransactionReceipt(req.body);
@@ -192,7 +189,7 @@ async function createTransaction(req, res) {
       },
     });
 
-  if (transaction.platform !== 'android-playstore')
+  if (transaction.type !== 'android-playstore')
     return res.status(200).json({
       ok: false,
       data: {
@@ -225,12 +222,9 @@ async function createTransaction(req, res) {
       return res.status(200).json({
         ok: true,
         data: {
-          id: transaction.nativePurchase.productId,
+          id: transaction.receipt.productId,
           latest_receipt: true,
-          transaction: {
-            data: { transaction, success: true },
-            type: transaction.platform,
-          },
+          transaction: transaction.receipt,
           collection: [
             {
               expiryDate: transaction.expiryDate,
