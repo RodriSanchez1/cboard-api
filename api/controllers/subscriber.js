@@ -98,7 +98,7 @@ function updateSubscriber(req, res) {
         const errorValidatingTransaction = err.errors?.transaction;
         const errorValidatingProduct = err.product;
         if (errorValidatingTransaction) {
-          return res.status(403).json({
+          return res.status(401).json({
             message: 'Error saving subscriber.',
             error:
               errorValidatingTransaction.message ??
