@@ -158,7 +158,9 @@ async function createTransaction(req, res) {
     if (receipt && typeof receipt === 'string') {
       return {
           ...purchase.transaction,
-          receipt:JSON.parse(receipt)
+          receipt:JSON.parse(receipt),
+          type: purchase.type,
+          platform: purchase.transaction.type
       };
     }
     return purchase.transaction;
@@ -189,7 +191,7 @@ async function createTransaction(req, res) {
       },
     });
 
-  if (transaction.type !== 'android-playstore')
+  if (transaction.platform !== 'android-playstore')
     return res.status(200).json({
       ok: false,
       data: {
