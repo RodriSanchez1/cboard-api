@@ -323,7 +323,7 @@ const subscriber = {
     isExpired = false,
     isBillingRetryPeriod = false,
   }) => {
-    const { purchaseToken } = subscriber.transactionData.nativePurchase;
+    const { purchaseToken } = subscriber.transactionData.transaction;
     nock('https://www.googleapis.com')
       .post('/oauth2/v4/token')
       .reply(200);

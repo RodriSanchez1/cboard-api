@@ -165,7 +165,7 @@ describe('Subscriber API calls', function() {
     });
 
     it('it should creates a transaction field in subscriber.', async function() {
-      const receiptObject = JSON.parse(transactionData.nativePurchase.receipt);
+      const receiptObject = JSON.parse(transactionData.transaction.receipt);
       const mockTransactionData = transactionData;
       const verifiedPurchaseReply = mockPurchaseTokenVerification({
         isValidToken: true,
@@ -184,19 +184,12 @@ describe('Subscriber API calls', function() {
       const firstCollection = collection[0];
       transactionRes.ok.should.to.equal(true);
       transactionRes.data.id.should.to.deep.equal(
-        mockTransactionData.nativePurchase.productId
+        mockTransactionData.id
       );
       transactionRes.data.latest_receipt.should.to.deep.equal(true);
-      transactionRes.data.transaction.type.should.to.deep.equal(
-        mockTransactionData.platform
+      transactionRes.data.transaction.should.to.deep.equal(
+        receiptObject
       );
-      transactionRes.data.transaction.data.transaction.nativePurchase.should.to.deep.equal(
-        {
-          ...mockTransactionData.nativePurchase,
-          receipt: receiptObject,
-        }
-      );
-      transactionRes.data.transaction.data.success.should.to.deep.equal(true);
 
       firstCollection.expiryDate.should.to.deep.equal(expectedExpiryDate);
       firstCollection.isExpired.should.to.deep.equal(false);
@@ -204,7 +197,7 @@ describe('Subscriber API calls', function() {
     });
 
     it('it should should response that transaction is expired.', async function() {
-      const receiptObject = JSON.parse(transactionData.nativePurchase.receipt);
+      const receiptObject = JSON.parse(transactionData.transaction.receipt);
       const mockTransactionData = transactionData;
       const verifiedPurchaseReply = mockPurchaseTokenVerification({
         isValidToken: true,
@@ -226,26 +219,19 @@ describe('Subscriber API calls', function() {
 
       transactionRes.ok.should.to.equal(true);
       transactionRes.data.id.should.to.deep.equal(
-        mockTransactionData.nativePurchase.productId
+        receiptObject.productId
       );
       transactionRes.data.latest_receipt.should.to.deep.equal(true);
-      transactionRes.data.transaction.type.should.to.deep.equal(
-        mockTransactionData.platform
+      transactionRes.data.transaction.should.to.deep.equal(
+        receiptObject
       );
-      transactionRes.data.transaction.data.transaction.nativePurchase.should.to.deep.equal(
-        {
-          ...mockTransactionData.nativePurchase,
-          receipt: receiptObject,
-        }
-      );
-      transactionRes.data.transaction.data.success.should.to.deep.equal(true);
       firstCollection.expiryDate.should.to.deep.equal(expectedExpiryDate);
       firstCollection.isExpired.should.to.deep.equal(true);
       firstCollection.isBillingRetryPeriod.should.to.deep.equal(false);
     });
 
     it('it should should response that transaction is expired and is on billing retry period.', async function() {
-      const receiptObject = JSON.parse(transactionData.nativePurchase.receipt);
+      const receiptObject = JSON.parse(transactionData.transaction.receipt);
       const mockTransactionData = transactionData;
       const verifiedPurchaseReply = mockPurchaseTokenVerification({
         isValidToken: true,
@@ -267,19 +253,12 @@ describe('Subscriber API calls', function() {
 
       transactionRes.ok.should.to.equal(true);
       transactionRes.data.id.should.to.deep.equal(
-        mockTransactionData.nativePurchase.productId
+        receiptObject.productId
       );
       transactionRes.data.latest_receipt.should.to.deep.equal(true);
-      transactionRes.data.transaction.type.should.to.deep.equal(
-        mockTransactionData.platform
+      transactionRes.data.transaction.should.to.deep.equal(
+         receiptObject,
       );
-      transactionRes.data.transaction.data.transaction.nativePurchase.should.to.deep.equal(
-        {
-          ...mockTransactionData.nativePurchase,
-          receipt: receiptObject,
-        }
-      );
-      transactionRes.data.transaction.data.success.should.to.deep.equal(true);
       firstCollection.expiryDate.should.to.deep.equal(expectedExpiryDate);
       firstCollection.isExpired.should.to.deep.equal(true);
       firstCollection.isBillingRetryPeriod.should.to.deep.equal(true);
