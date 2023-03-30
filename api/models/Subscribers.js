@@ -71,6 +71,7 @@ const subscribersSchema = new Schema(SUBSCRIBERS_SCHEMA_DEFINITION, {
 
 
 subscribersSchema.pre('save', async function() {
+  if (this.transaction) {
     if (this.transaction?.receipt?.productId === this.product?.subscriptionId) {
       return true;
     }
@@ -83,6 +84,7 @@ subscribersSchema.pre('save', async function() {
         },
       },
     };
+  }
 });
 
 subscribersSchema.path('transaction').validate(async function(transaction) {
