@@ -466,7 +466,7 @@ describe('Subscriber API calls', function() {
         .set('Authorization', `Bearer ${user.token}`)
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
-        .expect(403);
+        .expect(401);
 
       const subscriberRes = res.body;
       subscriberRes.should.to.not.have.property('createdAt');
