@@ -197,42 +197,117 @@ const subscriber = {
   },
 
   transactionData: {
-    className: 'Transaction',
-    transactionId: 'GPA.3332-8799-5619-52658',
-    state: 'approved',
+    id: "premium_full",
+    type: "paid subscription",
+    offers: [
+      {
+        className: "Offer",
+        id: "premium_full@AUj/YhgwIQhNe+XXn+Rh3M623WkHKcm0R0n0liYRaXJUnMvrblLEnZvnVb6gV1miLvZxAnUbMtIg+U9+EQ7upRydkC8B6I70E4+b10X5ihYeYdhF40emNjR+B762MVbK6YZ/kco7Drmqmc3fiESQYC1yPA==",
+        pricingPhases: [
+          {
+            price: "US$ 7,50",
+            priceMicros: 7500000,
+            currency: "USD",
+            billingPeriod: "P1M",
+            billingCycles: 0,
+            recurrenceMode: "INFINITE_RECURRING",
+            paymentMode: "PayAsYouGo"
+          }
+        ],
+        productId: "premium_full",
+        productType: "paid subscription",
+        platform: "android-playstore",
+        type: "subs",
+        tags: [],
+        token: "AUj/YhgwIQhNe+XXn+Rh3M623WkHKcm0R0n0liYRaXJUnMvrblLEnZvnVb6gV1miLvZxAnUbMtIg+U9+EQ7upRydkC8B6I70E4+b10X5ihYeYdhF40emNjR+B762MVbK6YZ/kco7Drmqmc3fiESQYC1yPA=="
+      },
+      {
+        className: "Offer",
+        id: "premium_full@AUj/Yhjh0/Qo0ys+uilEc1UQJ9dRostgGonp9xhtHgiIPvf4NCQK2chYvWCECTd+OmZ9Rkxwbz8EEJHdBLXWByDEBOxmQq/eFzxy4Po2fXPlnqkONYKg9VMS+g2Ykxvn7Uyl9zK62J/GwAFDXiNqLvQ=",
+        pricingPhases: [
+          {
+            price: "US$ 4,50",
+            priceMicros: 4500000,
+            currency: "USD",
+            billingPeriod: "P1Y",
+            billingCycles: 0,
+            recurrenceMode: "INFINITE_RECURRING",
+            paymentMode: "PayAsYouGo"
+          }
+        ],
+        productId: "premium_full",
+        productType: "paid subscription",
+        platform: "android-playstore",
+        type: "subs",
+        tags: [],
+        token: "AUj/Yhjh0/Qo0ys+uilEc1UQJ9dRostgGonp9xhtHgiIPvf4NCQK2chYvWCECTd+OmZ9Rkxwbz8EEJHdBLXWByDEBOxmQq/eFzxy4Po2fXPlnqkONYKg9VMS+g2Ykxvn7Uyl9zK62J/GwAFDXiNqLvQ="
+      }
+    ],
     products: [
       {
-        productId: 'premium_full',
-      },
+        className: "Product",
+        title: "Premium All Featuresos (Cboard AAC)",
+        description: "",
+        platform: "android-playstore",
+        type: "paid subscription",
+        id: "premium_full",
+        offers: [
+          {
+            className: "Offer",
+            id: "premium_full@AUj/YhgwIQhNe+XXn+Rh3M623WkHKcm0R0n0liYRaXJUnMvrblLEnZvnVb6gV1miLvZxAnUbMtIg+U9+EQ7upRydkC8B6I70E4+b10X5ihYeYdhF40emNjR+B762MVbK6YZ/kco7Drmqmc3fiESQYC1yPA==",
+            pricingPhases: [
+              {
+                price: "US$ 7,50",
+                priceMicros: 7500000,
+                currency: "USD",
+                billingPeriod: "P1M",
+                billingCycles: 0,
+                recurrenceMode: "INFINITE_RECURRING",
+                paymentMode: "PayAsYouGo"
+              }
+            ],
+            productId: "premium_full",
+            productType: "paid subscription",
+            platform: "android-playstore",
+            type: "subs",
+            tags: [],
+            token: "AUj/YhgwIQhNe+XXn+Rh3M623WkHKcm0R0n0liYRaXJUnMvrblLEnZvnVb6gV1miLvZxAnUbMtIg+U9+EQ7upRydkC8B6I70E4+b10X5ihYeYdhF40emNjR+B762MVbK6YZ/kco7Drmqmc3fiESQYC1yPA=="
+          },
+          {
+            className: "Offer",
+            id: "premium_full@AUj/Yhjh0/Qo0ys+uilEc1UQJ9dRostgGonp9xhtHgiIPvf4NCQK2chYvWCECTd+OmZ9Rkxwbz8EEJHdBLXWByDEBOxmQq/eFzxy4Po2fXPlnqkONYKg9VMS+g2Ykxvn7Uyl9zK62J/GwAFDXiNqLvQ=",
+            pricingPhases: [
+              {
+                price: "US$ 4,50",
+                priceMicros: 4500000,
+                currency: "USD",
+                billingPeriod: "P1Y",
+                billingCycles: 0,
+                recurrenceMode: "INFINITE_RECURRING",
+                paymentMode: "PayAsYouGo"
+              }
+            ],
+            productId: "premium_full",
+            productType: "paid subscription",
+            platform: "android-playstore",
+            type: "subs",
+            tags: [],
+            token: "AUj/Yhjh0/Qo0ys+uilEc1UQJ9dRostgGonp9xhtHgiIPvf4NCQK2chYvWCECTd+OmZ9Rkxwbz8EEJHdBLXWByDEBOxmQq/eFzxy4Po2fXPlnqkONYKg9VMS+g2Ykxvn7Uyl9zK62J/GwAFDXiNqLvQ="
+          }
+        ]
+      }
     ],
-    platform: 'android-playstore',
-    nativePurchase: {
-      orderId: 'GPA.3332-8799-5619-52658',
-      packageName: 'com.unicef.cboard',
-      productId: 'premium_full',
-      purchaseTime: 1668093831727,
-      purchaseState: 0,
-      purchaseToken:
-        'M0cKeDsldjaskljdsljdasklj.AO-J1OyLtEdnhjRTGH5635yl3lP5bS2Wi7CN2QvBj0AvSt-1jlasdnbakuFtzIg',
-      quantity: 1,
-      autoRenewing: true,
-      acknowledged: false,
-      productIds: ['premium_full'],
-      getPurchaseState: 1,
-      developerPayload: '',
-      accountId: '',
-      profileId: '',
-      signature:
-        'XJcrs+pE1dCKERFuioZ2PtatZL1EWFd8Wb4CqGQctspuIJ7n9f/ohrGnABiP8HANyudNDcsoEd2+5l5vh5rNnsUIkePUzsoiFvm1M55Ag57hmdnElYyEBYUn+SSnOQcTzCM2rm2tlpedj1xRklwjH0oxFXj1QOQOsW0n/Vj2Gty5I0+Fp5XxbeMdruYB0TaToaLoRBCn4vATHVJca7M3QxZg9hT7p+aCOZoaCQ4/xBv+vD/VrdygaeGckWrMnTifX00H2fAvAoaC4OZ682dOQeVLHhYHO4RWDPlwinI/b+t8x1vQ/mKDQ4GxfFckrg/RRJco/9wGIxGd7257aF739w==',
-      receipt:
-        '{"orderId":"GPA.3332-8799-5619-52658","packageName":"com.unicef.cboard","productId":"premium_full","purchaseTime":1668093831727,"purchaseState":0,"purchaseToken":"afalfjihkckgdngikhkhnpfa.AO-J1OyLtExOfZpoOORV9WKUcsyfdJMfo08iEtBuHE0ovZwNK5yl3lP5bS2Wi7CN2QvBj0AvSt-1jlkwmmY8q2KxGzakuFtzIg","quantity":1,"autoRenewing":true,"acknowledged":false}',
+    transaction: {
+      type: "android-playstore",
+      id: "GPA.3349-5558-4470-63823",
+      purchaseToken: "nkogbhfkhmgbgaljcbadggff.AO-J1Ozpb5L-Kj239Y_l-wWnKUtKW4hRaMIaz2RpqIlW-vOwoKueOBKyv-LQiUZWp9JGPpLtgbSLz7x9PcStZeoEhWj135_YkA",
+      signature: "DJwkxHE4JrbSFo9LJ0S7LnXOxXgwPqGmYOo12620epCIEPq1zvSgZICHpHK0AaAlOwovXZCGO6lhUclIw8uilv8Rb2uvBPD98QQWf4bo7xx+uG1Mvw0l7sj/NEj1z8wsWu7MchsRZ5v52cxh+bAAqyorz4ldUgWtFMABzN7AJJgG7ZjHzbr9g5M3rZ5iNuHVooNJ2LdWaCwLk5WbOhl8MD/unIHT5pXadN2f8a4I1YVZIUAi6Lt5LkOeWQ96WbBUf25uniiYQ0oQzYNHis730P1NHJ6VaE8p2coVvGaN6VkTXO2o7GFA659vCUq/gf2Bm2l8Ad8DFiuXCkv1AoYGdw==",
+      receipt: "{\"orderId\":\"GPA.3349-5558-4470-63823\",\"packageName\":\"com.unicef.cboard\",\"productId\":\"premium_full\",\"purchaseTime\":1680110056669,\"purchaseState\":0,\"purchaseToken\":\"nkogbhfkhmgbgaljcbadggff.AO-J1Ozpb5L-Kj239Y_l-wWnKUtKW4hRaMIaz2RpqIlW-vOwoKueOBKyv-LQiUZWp9JGPpLtgbSLz7x9PcStZeoEhWj135_YkA\",\"quantity\":1,\"autoRenewing\":false,\"acknowledged\":true}"
     },
-    purchaseId:
-      'afalfjihkckgdngikhkhnpfa.AO-J1OyLtExOfZpoOORV9WKUcsyfdJMfo08iEtBuHE0ovZwNK5yl3lP5bS2Wi7CN2QvBj0AvSt-1jlkwmmY8q2KxGzakuFtzIg',
-    purchaseDate: '2022-11-10T15:23:51.727Z',
-    isPending: false,
-    isAcknowledged: false,
-    renewalIntent: 'Renew',
+    additionalData: {},
+    device: {
+      plugin: "cordova-plugin-purchase/13.3.11"
+    }
   },
   createSubscriber: async (userId) => {
     const newSubscriber = subscriber.subscriberData;
